@@ -1,7 +1,7 @@
 ﻿# 🏋️‍♀️ ACADEMIA API RESILIA 
 
 <h1 align="center">
-  <img width="300" align="center" src="/./assets/escolher-a-melhor-academia.jpg">
+  <img width="700" align="center" src="/./assets/escolher-a-melhor-academia.jpg">
 </h1>
 
 <h3 align="center">

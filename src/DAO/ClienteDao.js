@@ -1,0 +1,55 @@
+class ClientesDAO{
+    constructor(bd){
+        this.bd = bd;
+    }
+    listarClientes(){
+        return new Promise((resolve, reject) => {
+            this.bd.all(`SELECT * FROM CLIENTES`, (error, resultado)=>{
+                if(error) reject(error);
+                else resolve(resultado)
+            })
+        })
+    }
+    listarClientesID(id){
+        return new Promise((resolve, reject) => {
+            this.bd.all(`SELECT * FROM CLIENTES WHERE id = ${id}`, (error, resultado)=>{
+                if(error) reject(error);
+                else resolve(resultado)
+            })
+        })
+    }
+    CadastrarClientes(Cliente){
+        return new Promise((resolve, reject) => {
+            this.bd.run(
+                `INSERT INTO CLIENTES (nome, email, telefone, endereco, dataNascimento, cpf)
+                 VALUES (?, ?, ?, ?, ?, ?) `,
+                 [Cliente.nome, Cliente.email, Cliente.telefone, Cliente.endereco, Cliente.dataNascimento, Cliente.cpf],
+            (error)=>{
+                if(error) reject(error);
+                else resolve('DEU CERTO INSERIR CLIENTE')
+            })
+        })
+    }
+    AlterarCliente(ClienteAtualizado){
+        return new Promise((resolve, reject) => {
+            this.bd.run(`
+            UPDATE CLIENTES
+            SET nome = ?, email = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ?, WHERE id = ?`, ClienteAtualizado,
+             (error)=>{
+                if(error) reject(error);
+                else resolve('DEU CERTO ALTERAR CLIENTE')
+            })
+        })
+    }
+    DeletarCliente(id){
+        return new Promise((resolve, reject) => {
+            this.bd.run(`DELETE FROM CLIENTES WHERE id = ${id} `, (error)=>{
+                if(error) reject(error);
+                else resolve("DEU CERTO DELETAR CLIENTE")
+            })
+         })
+    }   
+}
+
+export {ClientesDAO}
+

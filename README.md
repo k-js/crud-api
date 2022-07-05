@@ -70,6 +70,6 @@ Você pode realizar requisições REST através do Insomnia
 
 <table align="center">
   <tr>
-<td align="center"><a href="https://github.com/k-js"><img src="style/imagens/Keu.jpg" width="100px;" alt=""/><br /><sub><b>k-js</b></sub></a><br /><a href="contribuiçes" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/alebulka"><img src="https://avatars.githubusercontent.com/u/100357451?v=4" width="100px;" alt=""/><br /><sub><b>Alebulka</b></sub></a><br /><a href="contribuiçes" title="Documentation">💻</a></td><td align="center"><a href="https://github.com/Thaiscrist"><img src="https://avatars.githubusercontent.com/u/100290383?v=4" width="100px;" alt=""/><br /><sub><b>Thaiscrist</b></sub></a><br /><a href="contribuiçes" title="Documentation">🌍</a></td>
+<td align="center"><a href="https://github.com/k-js"><img src="https://github.com/account" width="100px;" alt=""/><br /><sub><b>k-js</b></sub></a><br /><a href="contribuiçes" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/alebulka"><img src="https://avatars.githubusercontent.com/u/100357451?v=4" width="100px;" alt=""/><br /><sub><b>Alebulka</b></sub></a><br /><a href="contribuiçes" title="Documentation">💻</a></td><td align="center"><a href="https://github.com/Thaiscrist"><img src="https://avatars.githubusercontent.com/u/100290383?v=4" width="100px;" alt=""/><br /><sub><b>Thaiscrist</b></sub></a><br /><a href="contribuiçes" title="Documentation">🌍</a></td>
  </tr>
 </table>

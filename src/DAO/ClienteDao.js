@@ -1,4 +1,4 @@
-class ClientesDAO{
+class ClienteDAO{
     constructor(bd){
         this.bd = bd;
     }
@@ -51,5 +51,5 @@ class ClientesDAO{
     }   
 }
 
-export {ClientesDAO}
+export {ClienteDAO}
 

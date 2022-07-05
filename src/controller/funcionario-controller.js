@@ -1,6 +1,6 @@
-const Funcionario = require("../models/funcionario-model");
-const bdSQLite = require("../infra/sqlite-db");
-const FuncionarioDao = require("../DAO/funcionario_dao");
+import { sqlite3 } from "sqlite3";
+import { Funcionario } from "../models/funcionario-model.js";
+import { FuncionarioDao } from "../DAO/funcionario_dao.js";
 
 const funcionario = (app) => {
   const DadosDAO = new FuncionarioDao(bdSQLite);

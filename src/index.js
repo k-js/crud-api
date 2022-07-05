@@ -3,7 +3,7 @@ const app=express();
 
 app.use(express.json());
 
-import { bdSQLite } from "./infra/sqlite";
+import { bdSQLite } from "./infra/sqlite.js";
 
 import { cliente } from "./controller/cliente-controller.js";
 cliente(app, bdSQLite);

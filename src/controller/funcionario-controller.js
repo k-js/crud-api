@@ -1,4 +1,3 @@
-import { sqlite3 } from "sqlite3";
 import { Funcionario } from "../models/funcionario-model.js";
 import { FuncionarioDao } from "../DAO/funcionario_dao.js";
 
@@ -88,4 +87,4 @@ const funcionario = (app) => {
   });
 };
 
-module.exports = funcionario;
+export {funcionario};

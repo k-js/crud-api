@@ -1,4 +1,4 @@
-import { sqlite3 } from "sqlite3";
+import sqlite3  from 'sqlite3';
 
 class AppDAO {
   constructor(dbFilePath) {
@@ -12,4 +12,4 @@ class AppDAO {
   }
 }
 
-module.exports = AppDAO
+export {AppDAO};

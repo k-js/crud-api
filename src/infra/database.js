@@ -2,4 +2,4 @@ const bd = {
     "funcionario": [],
 };
 
-module.exports = bd;
+export {bd} ;

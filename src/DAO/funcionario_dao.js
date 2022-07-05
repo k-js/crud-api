@@ -65,4 +65,5 @@ class FuncionarioDao {
     }
   
   }
-  module.exports = FuncionarioDao;
+
+export {FuncionarioDao};

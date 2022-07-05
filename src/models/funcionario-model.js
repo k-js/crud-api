@@ -11,4 +11,4 @@ class Funcionario {
     }
     
 }
-module.exports = Funcionario;
+export {Funcionario};

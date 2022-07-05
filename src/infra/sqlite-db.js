@@ -1,4 +1,4 @@
-import { sqlite3 } from "sqlite3";
+import sqlite3  from 'sqlite3';
 const bd = new sqlite3.Database('./src/database/db.sqlite');
 
 process.on('SIGINT', () =>
@@ -8,4 +8,4 @@ process.on('SIGINT', () =>
     })
 );
 
-module.exports = bd;
+export {bd};

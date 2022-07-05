@@ -1,5 +1,5 @@
-const Funcionario  = require('../../../src/models/funcionario-model');
-const bdSQLite = require('../../../src/database/sqlite-db')
+const Funcionario  = require('../models/funcionario-model');
+const bdSQLite = require('../infra/sqlite-db')
 const FuncionarioDao = require('../DAO/funcionario_dao')
 
 const funcionario = (app) =>{

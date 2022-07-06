@@ -12,6 +12,6 @@ cliente(app, bdSQLite);
 import { funcionario } from "./src/controller/funcionario-controller.js";
 funcionario(app, bdSQLite);
 
-import { plano }
+// import { plano } from "" //controller do plano ;
 
 app.listen(3000, () => { console.log('RODANDO NA PORTA 3000')})

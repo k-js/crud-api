@@ -36,8 +36,8 @@ class ClienteDAO{
             UPDATE CLIENTES
             SET nome = ?, email = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ?, WHERE id = ?`, ClienteAtualizado,
              (error)=>{
-                if(error) reject(error);
-                else resolve('DEU CERTO ALTERAR CLIENTE')
+                if(error) reject("Não foi possível alterar plano");
+                else resolve('Plano alterado com sucesso!')
             })
         })
     }

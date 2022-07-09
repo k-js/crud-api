@@ -1,5 +1,5 @@
-import { Planos } from "../models/planos-models";
-import { PlanosDAO } from "../DAO/planos-DAO";
+import { Plano } from "../models/planos-models.js";
+import { PlanosDAO } from "../DAO/planos-DAO.js";
 
 const planos = (app, bdSQLite) => {
     const DAOplanos = new DAOplanos(bdSQLite);
@@ -44,5 +44,7 @@ const planos = (app, bdSQLite) => {
         data();
       
     })
+
+}
     
-  export {Planos}
+  export {planos}

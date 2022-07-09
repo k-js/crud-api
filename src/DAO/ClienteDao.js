@@ -21,11 +21,11 @@ class ClienteDAO{
     CadastrarClientes(Cliente){
         return new Promise((resolve, reject) => {
             this.bd.run(
-                `INSERT INTO CLIENTES (nome, email, telefone, endereco, dataNascimento, cpf)
-                 VALUES (?, ?, ?, ?, ?, ?) `,
-                 [Cliente.nome, Cliente.email, Cliente.telefone, Cliente.endereco, Cliente.dataNascimento, Cliente.cpf],
+                `INSERT INTO CLIENTES (nome, telefone, endereco, dataNascimento, cpf)
+                 VALUES (?, ?, ?, ?, ?) `,
+                 [Cliente.nome, Cliente.telefone, Cliente.endereco, Cliente.dataNascimento, Cliente.cpf],
             (error)=>{
-                if(error) reject(error);
+                if(error) reject(error.message);
                 else resolve('DEU CERTO INSERIR CLIENTE')
             })
         })
@@ -34,9 +34,9 @@ class ClienteDAO{
         return new Promise((resolve, reject) => {
             this.bd.run(`
             UPDATE CLIENTES
-            SET nome = ?, email = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ?, WHERE id = ?`, ClienteAtualizado,
+            SET nome = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ? WHERE id = ?`, ClienteAtualizado,
              (error)=>{
-                if(error) reject("Não foi possível alterar plano");
+                if(error) reject(error.message);
                 else resolve('Plano alterado com sucesso!')
             })
         })

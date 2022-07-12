@@ -1,4 +1,6 @@
-
+import express from "express"; 
+import { bdSQLite } from "./src/infra/sqlite.js";
+const app=express(); 
 
 
 

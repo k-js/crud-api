@@ -1,6 +1,6 @@
 let id = 0;
 
-class Plano {
+class Planos {
     constructor(preco, id_cadastro_cliente, qtd_meses, carac){
         this.id = id++;
         this.preco = preco;
@@ -10,4 +10,4 @@ class Plano {
     }
 }
 
-export {Plano};
+export {Planos};

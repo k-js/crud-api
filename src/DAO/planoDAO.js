@@ -4,7 +4,7 @@ class PlanosDAO{
     }
     listagemPlanos(){
         return new Promise((resolve, reject) => {
-            this.bd.all(`SELECT * FROM CLIENTES`, (error, resultado)=>{
+            this.bd.all(`SELECT * FROM PLANOS`, (error, resultado)=>{
                 if(error) reject(error);
                 else resolve(resultado)
             })
@@ -44,7 +44,7 @@ class PlanosDAO{
             preco = ?, 
             id_cadastro_cliente = ?,
             qtd_meses = ?,
-            carac = ?,
+            carac = ?
             WHERE id = ?`, PlanoAtualizado,
 
              (error)=>{

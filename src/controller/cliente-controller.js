@@ -1,10 +1,10 @@
-import  ClienteDAO  from "../dao/cliente-dao.js";
+import  cliente_dao  from "../dao/cliente-dao.js";
 import { Clientes } from "../models/cliente-models.js";
 
 
 const cliente = (app, bdSQLite) => {
     
-  const DAOCliente = new ClienteDAO(bdSQLite);
+  const DAOCliente = new cliente_dao(bdSQLite);
 
   // ROTA PARA PUXAR CLIENTES
   app.get('/clientes', (req, res)=>{

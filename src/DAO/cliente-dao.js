@@ -51,5 +51,5 @@ class ClienteDAO{
     }   
 }
 
-export {ClienteDAO}
+export default ClienteDAO
 

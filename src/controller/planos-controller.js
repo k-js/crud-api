@@ -1,5 +1,5 @@
 import { Planos } from "../models/planos-models.js";
-import { PlanosDAO } from "../DAO/planoDAO.js";
+import { PlanosDAO } from "../dao/planoDAO.js";
 
 const planos = (app, bdSQLite) => {
     const DAOplanos = new PlanosDAO(bdSQLite);

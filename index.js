@@ -15,4 +15,4 @@ cliente(app, bdSQLite);
 import { planos } from "./src/controller/planos-controller.js" 
 planos(app, bdSQLite)
 
-app.listen(3000, () => { console.log('RODANDO NA PORTA 3000')})
+app.listen(process.env.PORT || 3000, () => { console.log('RODANDO NA PORTA 3000')})

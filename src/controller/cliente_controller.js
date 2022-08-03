@@ -1,5 +1,5 @@
-import  cliente_dao  from "../dao/cliente-dao.js";
-import { Clientes } from "../models/cliente-models.js";
+import  cliente_dao  from "../dao/cliente_dao.js";
+import { Clientes } from "../models/cliente_models.js";
 
 
 const cliente = (app, bdSQLite) => {

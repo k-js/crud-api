@@ -3,12 +3,12 @@ const db = new sqlite3.Database('./src/infra/database.db');
 
 const CREATE = `
 CREATE TABLE IF NOT EXISTS "CLIENTES"(
-"id" INTEGER PRIMARY KEY AUTOINCREMENT,
+"id"  KEY AUTOINCREMENT,
 "nome" varchar(150),
 "telefone" varchar(15),
 "endereco" varchar(200),
 "dataNascimento" date,
-"cpf" varchar(14)
+"cpf" INTEGER PRIMARY varchar(14)
 );`;
 
 const INSERT = `INSERT INTO CLIENTES (id, nome, telefone, endereco, dataNascimento, cpf) 

@@ -23,7 +23,7 @@ const cliente = (app, bdSQLite) => {
   app.get('/clientes/:cpf', (req, res)=>{
       const data = async()=>{
           try{
-              const clientes = await DAOCliente.listarClientesID(req.params.id);
+              const clientes = await DAOCliente.listarClientesID(req.params.cpf);
               res.status(200).json(clientes)
           }catch(error){
               res.status(404).json(error)

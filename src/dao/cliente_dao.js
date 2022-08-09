@@ -12,7 +12,7 @@ class ClienteDAO{
     }
     listarClientesID(cpf){
         return new Promise((resolve, reject) => {
-            this.bd.all(`SELECT * FROM CLIENTES WHERE id = ${cpf}`, (error, resultado)=>{
+            this.bd.all(`SELECT * FROM CLIENTES WHERE cpf = ${cpf}`, (error, resultado)=>{
                 if(error) reject(error);
                 else resolve(resultado)
             })

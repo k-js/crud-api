@@ -10,9 +10,9 @@ class ClienteDAO{
             })
         })
     }
-    listarClientesID(id){
+    listarClientesID(cpf){
         return new Promise((resolve, reject) => {
-            this.bd.all(`SELECT * FROM CLIENTES WHERE id = ${id}`, (error, resultado)=>{
+            this.bd.all(`SELECT * FROM CLIENTES WHERE id = ${cpf}`, (error, resultado)=>{
                 if(error) reject(error);
                 else resolve(resultado)
             })
@@ -41,9 +41,9 @@ class ClienteDAO{
             })
         })
     }
-    DeletarCliente(id){
+    DeletarCliente(cpf){
         return new Promise((resolve, reject) => {
-            this.bd.run(`DELETE FROM CLIENTES WHERE id = ${id} `, (error)=>{
+            this.bd.run(`DELETE FROM CLIENTES WHERE id = ${cpf} `, (error)=>{
                 if(error) reject(error);
                 else resolve("DEU CERTO DELETAR CLIENTE")
             })

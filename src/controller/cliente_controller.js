@@ -20,7 +20,7 @@ const cliente = (app, bdSQLite) => {
       
   })
   // ROTA PARA PUXAR CLIENTES POR PARAMETRO
-  app.get('/clientes/:id', (req, res)=>{
+  app.get('/clientes/:cpf', (req, res)=>{
       const data = async()=>{
           try{
               const clientes = await DAOCliente.listarClientesID(req.params.id);
@@ -48,7 +48,7 @@ const cliente = (app, bdSQLite) => {
     
   })
   // ROTA PARA ALTERAR CLIENTE
-  app.put('/clientes/:id', (req, res)=>{
+  app.put('/clientes/:cpf', (req, res)=>{
      const body = req.body;
       const id = req.params.id;
           const data = async()=>{
@@ -78,7 +78,7 @@ const cliente = (app, bdSQLite) => {
       
   })   
   // ROTA PARA DELETAR CLIENTE
-  app.delete('/clientes/:id', (req, res)=>{
+  app.delete('/clientes/:cpf', (req, res)=>{
       const data = async()=>{
           try{
               const clientes = await DAOCliente.DeletarCliente(req.params.id);

@@ -33,8 +33,7 @@ class ClienteDAO{
     AlterarCliente(ClienteAtualizado){
         return new Promise((resolve, reject) => {
             this.bd.run(`
-            UPDATE CLIENTES
-            SET nome = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ? WHERE id = ?`, ClienteAtualizado,
+            UPDATE CLIENTES SET nome = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ? WHERE cpf = ?`, ClienteAtualizado,
              (error)=>{
                 if(error) reject(error.message);
                 else resolve('Plano alterado com sucesso!')
@@ -43,7 +42,7 @@ class ClienteDAO{
     }
     DeletarCliente(cpf){
         return new Promise((resolve, reject) => {
-            this.bd.run(`DELETE FROM CLIENTES WHERE id = ${cpf} `, (error)=>{
+            this.bd.run(`DELETE  FROM CLIENTES WHERE cpf = ${cpf} `, (error)=>{
                 if(error) reject(error);
                 else resolve("DEU CERTO DELETAR CLIENTE")
             })

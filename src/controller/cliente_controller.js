@@ -62,15 +62,18 @@ const cliente = (app, bdSQLite) => {
                               body.cpf || ClienteDadosAntigo[0].cpf)
 
                   const parametro = 
-                  [ClienteAtualizado.nome, 
+                    [ ClienteAtualizado.nome, 
                       ClienteAtualizado.telefone, 
                       ClienteAtualizado.endereco,
                       ClienteAtualizado.dataNascimento, 
-                      ClienteAtualizado.cpf, 
-                      id]
+                      ClienteAtualizado.cpf,
+                      cpf]
+
                   const clientes = await DAOCliente.AlterarCliente(parametro);
+            
                   res.status(201).json(clientes)
               }catch(error){
+                console.log(error)
                   res.status(404).json(error)
               }
           }

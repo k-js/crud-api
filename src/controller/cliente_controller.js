@@ -50,10 +50,10 @@ const cliente = (app, bdSQLite) => {
   // ROTA PARA ALTERAR CLIENTE
   app.put('/clientes/:cpf', (req, res)=>{
      const body = req.body;
-      const id = req.params.id;
+      const cpf = req.params.cpf;
           const data = async()=>{
               try{
-                  const ClienteDadosAntigo= await DAOCliente.listarClientesID(id);
+                  const ClienteDadosAntigo= await DAOCliente.listarClientesID(cpf);
                   const ClienteAtualizado = new 
                       Clientes(body.nome || ClienteDadosAntigo[0].nome, 
                               body.telefone || ClienteDadosAntigo[0].telefone,
@@ -81,7 +81,7 @@ const cliente = (app, bdSQLite) => {
   app.delete('/clientes/:cpf', (req, res)=>{
       const data = async()=>{
           try{
-              const clientes = await DAOCliente.DeletarCliente(req.params.id);
+              const clientes = await DAOCliente.DeletarCliente(req.params.cpf);
               res.status(201).json(clientes)
           }catch(error){
               res.status(404).json(error)

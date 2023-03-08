@@ -1,8 +1,5 @@
 ﻿# 🏋️‍♀️ ACADEMIA API RESILIA 
 
-<h1 align="center">
-  <img width="800" height="300" align="center" src="../../assets/escolher-a-melhor-academia.jpg">
-</h1>
 
 <h3 align="center">
 Projeto Final do Módulo 04 - Resilia Edu.

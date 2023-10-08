@@ -10,9 +10,9 @@ class ClienteDAO{
             })
         })
     }
-    listarClientesID(cpf){
+    listarClientesID(id){
         return new Promise((resolve, reject) => {
-            this.bd.all(`SELECT * FROM CLIENTES WHERE cpf = ${cpf}`, (error, resultado)=>{
+            this.bd.all(`SELECT * FROM CLIENTES WHERE id = ${id}`, (error, resultado)=>{
                 if(error) reject(error);
                 else resolve(resultado)
             })
@@ -30,19 +30,33 @@ class ClienteDAO{
             })
         })
     }
-    AlterarCliente(ClienteAtualizado){
+    AlterarCliente(ClienteAtualizado, id) { // Certifique-se de passar o ID como um parâmetro separado
         return new Promise((resolve, reject) => {
-            this.bd.run(`
-            UPDATE CLIENTES SET nome = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ? WHERE cpf = ?`, ClienteAtualizado,
-             (error)=>{
-                if(error) reject(error.message);
-                else resolve('Plano alterado com sucesso!')
-            })
-        })
-    }
-    DeletarCliente(cpf){
+          const parametro = [
+            ClienteAtualizado.nome,
+            ClienteAtualizado.telefone,
+            ClienteAtualizado.endereco,
+            ClienteAtualizado.dataNascimento,
+            ClienteAtualizado.cpf,
+            id // Adicione o ID no final do array
+          ];
+      
+          this.bd.run(`UPDATE CLIENTES SET nome = ?, telefone = ?, endereco = ?, dataNascimento = ?, cpf = ? WHERE id = ?`,
+            parametro, // Passe o array como argumento aqui
+            (error) => {
+              if (error) {
+                reject(error.message);
+              } else {
+                resolve('Cliente alterado com sucesso!');
+              }
+            }
+          );
+        });
+      }
+             
+    DeletarCliente(id){
         return new Promise((resolve, reject) => {
-            this.bd.run(`DELETE  FROM CLIENTES WHERE cpf = ${cpf} `, (error)=>{
+            this.bd.run(`DELETE  FROM CLIENTES WHERE id = ${id} `, (error)=>{
                 if(error) reject(error);
                 else resolve("DEU CERTO DELETAR CLIENTE")
             })
